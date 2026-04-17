@@ -63,7 +63,7 @@ You should see:
 
 ```bash
 # 1. Install dependencies
-pip install -r requirements.txt
+pip install -r requirements-streamlit.txt
 
 # 2. Make sure .env file is configured (see above)
 
@@ -94,16 +94,14 @@ See [APP_GUIDE.md](APP_GUIDE.md) for complete documentation.
 
 ---
 
-## 🚀 Run FastAPI Backend
+## 🚀 Run Streamlit UI
 
 ```bash
 pip install -r requirements.txt
-uvicorn main:app --reload
+bash run.sh
 ```
 
-API runs at: **http://localhost:8000**
-
-Docs: **http://localhost:8000/docs**
+UI runs at: **http://localhost:8501**
 
 ---
 
@@ -116,15 +114,13 @@ Docs: **http://localhost:8000/docs**
 cp .env.example .env  # Fill in your API keys
 
 # 2. Build image (includes trained model)
-docker build -t real-estate-api .
+docker build -t real-estate-ui .
 
 # 3. Run container
-docker run -p 8000:8000 --env-file .env real-estate-api
+docker run -p 8501:8501 --env-file .env real-estate-ui
 
-# 4. Test the API
-curl -X POST http://localhost:8000/predict \
-  -H 'Content-Type: application/json' \
-  -d '{"property_description":"3 bed, 2 bath, 2500 sqft, built 2005"}'
+# 4. Test the UI
+Open http://localhost:8501
 ```
 
 ### Or with Docker Compose (Recommended)
@@ -132,6 +128,23 @@ curl -X POST http://localhost:8000/predict \
 ```bash
 docker-compose up --build
 ```
+
+### Streamlit UI Docker
+
+```bash
+docker build -t real-estate-ui .
+docker run -p 8501:8501 --env-file .env real-estate-ui
+```
+
+On Render, the `PORT` env var is used automatically by the container.
+
+### Render deployment
+
+1. Create a new Render Web Service.
+2. Choose Docker and connect your repo.
+3. Set the build command to the default Docker build.
+4. Set environment variables: `GEMINI_API_KEY`, `OPENAI_API_KEY`.
+5. Use the default start command from the Dockerfile.
 
 ### API Endpoints
 

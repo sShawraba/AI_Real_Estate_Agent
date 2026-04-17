@@ -52,7 +52,7 @@ User Input → Stage 1 (LLM) → Stage 2 (ML) → Stage 3 (LLM) → Expert Predi
 cd /home/soup/ai-real-estate-agent
 
 # Install dependencies (one-time)
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-streamlit.txt
 
 # Run the app
 bash run.sh
