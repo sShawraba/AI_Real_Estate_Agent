@@ -1,0 +1,15 @@
+# environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# secrets
+.env
+
+# model files (optional if large)
+*.pkl
+
+# OS
+.DS_Store
