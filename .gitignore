@@ -9,7 +9,7 @@ __pycache__/
 .env
 
 # model files (optional if large)
-*.pkl
+#*.pkl
 
 # OS
 .DS_Store
