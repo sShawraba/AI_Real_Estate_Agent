@@ -7,15 +7,15 @@ MODEL_PATH = os.path.join("models", "xgb_model.pkl")
 model = joblib.load(MODEL_PATH)
 
 FEATURE_MAP = {
-    "overall_qual": "Overall Qual",
-    "gr_liv_area": "Gr Liv Area",
-    "full_bath": "Full Bath",
-    "garage_cars": "Garage Cars",
-    "year_built": "Year Built",
-    "neighborhood": "Neighborhood",
-    "bedroom_abvgr": "Bedroom AbvGr",
-    "kitchen_qual": "Kitchen Qual",
-    "total_bsmt_sf": "Total Bsmt SF"
+    "Overall_Qual": "Overall Qual",
+    "Gr_Liv_Area": "Gr Liv Area",
+    "Full_Bath": "Full Bath",
+    "Garage_Cars": "Garage Cars",
+    "Year_Built": "Year Built",
+    "Neighborhood": "Neighborhood",
+    "Bedroom_Abvgr": "Bedroom AbvGr",
+    "Kitchen_Qual": "Kitchen Qual",
+    "Total_Bsmt_Sf": "Total Bsmt SF"
 }
 
 # from llm output to model input
